@@ -38,7 +38,13 @@ const AppSidebar: React.FC<AppSidebarProps> = ({
               })}
               onClick={() => onItemClick(item)}
             >
-              <OffsettedListItemCell>{item.label}</OffsettedListItemCell>
+              <OffsettedListItemCell>
+                {item.logo ? (
+                  <item.logo className={classes.itemListItemLogo} />
+                ) : (
+                  item.label
+                )}
+              </OffsettedListItemCell>
             </OffsettedListItem>
           ))
         )}
